@@ -1,8 +1,8 @@
 import {render} from "react-dom";
-import Counter from "./comonents/counter";
-import "./styles.scss";
+import App from "./app";
+import "./index.scss";
 
 render(
-  <Counter/>,
+  <App/>,
   document.getElementById("root")
 )

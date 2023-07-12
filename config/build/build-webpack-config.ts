@@ -5,7 +5,8 @@ import {buildResolvers} from "./build-resolvers";
 import {buildPlugins} from "./build-plugins";
 import {buildDevServer} from "./build-dev-server";
 
-const buildWebpackConfig = ({mode, paths, port}: IBuildOptions): webpack.Configuration => {
+const buildWebpackConfig = (options: IBuildOptions): webpack.Configuration => {
+  const {mode, paths, port} = options;
   const {entry, build, html, staticPath} = paths;
 
   const isDevelopmentMode = mode === "development";
@@ -14,7 +15,7 @@ const buildWebpackConfig = ({mode, paths, port}: IBuildOptions): webpack.Configu
     entry,
     mode,
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     resolve: buildResolvers(),
     plugins: buildPlugins({htmlTemplatePath: html}),

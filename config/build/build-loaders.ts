@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {IBuildOptions} from "./types/config";
 
 const buildLoaders = (options: IBuildOptions): webpack.RuleSetRule[] => {
+  const isDevelopmentMode = options.mode === "development";
 
   // if we don't use typescript then we need to add babel to transpile jsx
   const typescriptLoader = {
@@ -14,11 +15,20 @@ const buildLoaders = (options: IBuildOptions): webpack.RuleSetRule[] => {
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
-      // creates style nodes from JS strings
-      options.mode === "development" ? "style-loader" :MiniCssExtractPlugin.loader,
-      // Translates CSS into CommonJS
-      "css-loader",
-      // Compiles Sass to CSS
+      isDevelopmentMode
+        ? "style-loader"
+        : MiniCssExtractPlugin.loader,
+      {
+        loader: "css-loader",
+        options: {
+          modules: {
+            auto: (resPath: string) => resPath.includes(".module.scss"),
+            localIdentName: isDevelopmentMode
+              ? "[path][name]__[local]"
+              : "[hash:base64:8]",
+          },
+        },
+      },
       "sass-loader",
     ],
   };
