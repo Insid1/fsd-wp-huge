@@ -1,6 +1,8 @@
 import {render} from "react-dom";
+import Counter from "./comonents/counter";
+import "./styles.scss";
 
 render(
-  <div>123</div>,
+  <Counter/>,
   document.getElementById("root")
 )

@@ -5,7 +5,6 @@ import {buildResolvers} from "./build-resolvers";
 import {buildPlugins} from "./build-plugins";
 import {buildDevServer} from "./build-dev-server";
 
-
 const buildWebpackConfig = ({mode, paths, port}: IBuildOptions): webpack.Configuration => {
   const {entry, build, html, staticPath} = paths;
 
