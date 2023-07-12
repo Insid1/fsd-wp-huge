@@ -6,8 +6,11 @@ import {buildPlugins} from "./build-plugins";
 import {buildDevServer} from "./build-dev-server";
 
 
-const buildWebpackConfig = ({mode, paths, port = 9110}: IBuildOptions): webpack.Configuration => {
+const buildWebpackConfig = ({mode, paths, port}: IBuildOptions): webpack.Configuration => {
   const {entry, build, html, staticPath} = paths;
+
+  const isDevelopmentMode = mode === "development";
+
   return {
     entry,
     mode,
@@ -15,14 +18,14 @@ const buildWebpackConfig = ({mode, paths, port = 9110}: IBuildOptions): webpack.
       rules: buildLoaders(),
     },
     resolve: buildResolvers(),
-    devServer: buildDevServer({staticPath: staticPath, port }),
     plugins: buildPlugins({htmlTemplatePath: html}),
     output: {
       filename: "[name].[contenthash].js",
       path: build,
       clean: true
     },
-    devtool: "inline-source-map",
+    devtool: isDevelopmentMode ? "inline-source-map" : undefined,
+    devServer: isDevelopmentMode ? buildDevServer({staticPath: staticPath, port}) : undefined,
   }
 }
 

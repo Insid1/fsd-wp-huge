@@ -7,10 +7,15 @@ interface IBuildPath {
   staticPath: string;
 }
 
+interface IBuildEnv {
+  mode?: BuildMode,
+  port?: number,
+}
+
 interface IBuildOptions {
   mode: BuildMode;
   paths: IBuildPath;
-  port?: number;
+  port: number;
 }
 
-export {BuildMode, IBuildPath, IBuildOptions}
+export {BuildMode, IBuildPath, IBuildEnv, IBuildOptions}

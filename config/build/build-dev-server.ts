@@ -13,6 +13,10 @@ const buildDevServer = ({staticPath, port}: IBuildDevServerParams): DevServerCon
     compress: true,
     port,
     open: true,
+    allowedHosts: "auto",
+    client: {
+      progress: true,
+    }
   }
 }
 

@@ -6,5 +6,6 @@ const testFn = (arg: number): number => {
 console.log(testFn(222))
 
 document.querySelector("body").innerHTML = "<div>123</div>"
+document.querySelector("body").innerHTML = "<div>1234</div>"
 
 export {testFn}
