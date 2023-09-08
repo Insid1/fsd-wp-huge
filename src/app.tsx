@@ -13,7 +13,6 @@ function App() {
 
   const {theme, toggleTheme, setTheme} = useTheme()
 
-  classNames
   return (
     <div className={classNames('app', {}, [theme])}>
       <button onClick={toggleTheme}>сменить тему</button>
