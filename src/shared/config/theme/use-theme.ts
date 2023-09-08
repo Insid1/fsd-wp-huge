@@ -1,4 +1,4 @@
-import {ThemeContext} from "./theme-context";
+import {ThemeContext} from "app/providers/theme-prodiver/lib/theme-context";
 import React, {useCallback, useContext} from "react";
 import {IThemeContext, ThemeType} from "./intefaces";
 

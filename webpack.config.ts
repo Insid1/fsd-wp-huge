@@ -10,7 +10,7 @@ const PUBLIC = "public";
 
 export default (env: IBuildEnv) => {
   const paths: IBuildPath = {
-    entry: path.resolve(__dirname, SRC, "index.tsx"),
+    entry: path.resolve(__dirname, SRC, "theme-prodiver.tsx"),
     html: path.resolve(__dirname, PUBLIC, "index.html"),
     build: path.resolve(__dirname, BUILD),
     staticPath: path.resolve(__dirname, PUBLIC),

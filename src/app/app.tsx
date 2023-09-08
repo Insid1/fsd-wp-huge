@@ -1,12 +1,9 @@
-import Counter from "./components/counter";
 import {Route, Routes} from "react-router-dom"
-import {MainPageAsync} from "./pages/main-page";
-import {AboutPageAsync} from "./pages/about-page";
-import {Suspense, useState} from "react";
-import {ThemeType} from "./theme/intefaces";
-import ThemeProvider from "./theme/theme-provider";
-import {useTheme} from "./theme/use-theme";
-import {classNames} from "./helpers/class-names";
+import {MainPageAsync} from "pages/main-page";
+import {AboutPageAsync} from "pages/about-page";
+import {Suspense} from "react";
+import {useTheme} from "shared/config";
+import {classNames} from "shared/lib";
 
 
 function App() {
@@ -23,7 +20,6 @@ function App() {
           <Route path="/about" element={<AboutPageAsync/>}/>
         </Routes>
       </Suspense>
-      <Counter/>
     </div>
   );
 }
