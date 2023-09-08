@@ -2,6 +2,7 @@ type BuildMode = "production" | "development";
 
 interface IBuildPath {
   entry: string;
+  src: string;
   build: string;
   html: string;
   staticPath: string;
