@@ -1,0 +1,28 @@
+.btn {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.primaryColor {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.secondaryColor {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.clearType {
+  background: none;
+}
+
+.primaryType {
+  padding: 4px;
+}
+
+.secondaryType {
+  padding: 4px;
+  background: none;
+}

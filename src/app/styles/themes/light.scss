@@ -1,8 +1,12 @@
-#root {
+:root {
   .light {
     --bg-color: #bebebe;
+    --inverted-bg-color: #0e0e75;
+
 
     --primary-color: #101e79;
     --secondary-color: #0436ff;
+    --inverted-primary-color: #049604;
+    --inverted-secondary-color: #04ff04;
   }
 }

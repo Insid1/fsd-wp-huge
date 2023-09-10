@@ -7,6 +7,22 @@
 * Каждый вышележащий слой может использовать только нижележащие слои (Dependensy inversion)
 * Каждый слайс должен обладать публичным АПИ (экспорт наружу через index как правило компонент и типы)
 
+### Слои используемые в проекте
+1. [APP](https://feature-sliced.design/ru/docs/reference/layers#app)
+
+2. [Pages](https://feature-sliced.design/ru/docs/reference/layers#pages)
+
+3. [Widgets](https://feature-sliced.design/ru/docs/reference/layers#widgets)
+
+4. [Features](https://feature-sliced.design/ru/docs/reference/layers#features)
+
+5. [Entities](https://feature-sliced.design/ru/docs/reference/layers#entities)
+
+6. [Shared](https://feature-sliced.design/ru/docs/reference/layers#shared)
+
+
+### Типовая архитектура проекта
+
 ```
 ├── App                 #   Layer - Приложение        
 │                       #
@@ -40,7 +56,9 @@
 │                       #
 ├── Shared              #   Layer - Переиспользуемые ресурсы
 │   ├── api             #           Segment - Логика запросов к АПИ
+│   ├── assets          #           Segment - Вспомогательные элементы (шрифты, иконки, картинки и т.п.)
 │   ├── config          #           Segment - Конфигурация приложения
 │   ├── lib             #           Segment - Инфраструктурная логика приложения
 │   └── ui              #           Segment - UI kit приложения
 ```
+

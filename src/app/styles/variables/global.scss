@@ -3,14 +3,17 @@
 
   --font-size-s: 8px;
   --line-height-s: 16px;
-  --font-s: var(--font-size-s) / var(--line-height-s) var(--font-family-main);
+  --font-s: (--font-size-s) / (--line-height-s) (--font-family-main);
 
   --line-height-m: 24px;
   --font-size-m: 16px;
-  --font-m: var(--font-size-m) / var(--line-height-m) var(--font-family-main);
+  --font-m: (--font-size-m) / (--line-height-m) (--font-family-main);
 
 
   --line-height-l: 32px;
   --font-size-l: 24px;
-  --font-l: var(--font-size-l) / var(--line-height-l) var(--font-family-main);
+  --font-l: (--font-size-l) / (--line-height-l) (--font-family-main);
+
+  // Element sizes
+  --navbar-size: 50px;
 }

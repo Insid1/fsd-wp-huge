@@ -6,13 +6,36 @@ const buildLoaders = (options: IBuildOptions): webpack.RuleSetRule[] => {
   const isDevelopmentMode = options.mode === "development";
 
   // if we don't use typescript then we need to add babel to transpile jsx
-  const typescriptLoader = {
+  const typescriptLoader: webpack.RuleSetRule = {
     test: /\.tsx?$/,
     use: "ts-loader",
     exclude: /node_modules/,
   }
 
-  const cssLoader = {
+  // add extensions to regexp to load different files
+  const fileLoader: webpack.RuleSetRule = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  }
+
+  const svgLoader: webpack.RuleSetRule = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: [
+      {
+        loader: '@svgr/webpack',
+        options: {
+          icon: true
+        }
+      }
+    ],
+  }
+
+  const cssLoader: webpack.RuleSetRule = {
     test: /\.s[ac]ss$/i,
     use: [
       isDevelopmentMode
@@ -36,6 +59,8 @@ const buildLoaders = (options: IBuildOptions): webpack.RuleSetRule[] => {
   return [
     typescriptLoader,
     cssLoader,
+    svgLoader,
+    fileLoader,
   ]
 }
 
