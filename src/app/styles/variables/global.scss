@@ -15,5 +15,7 @@
   --font-l: (--font-size-l) / (--line-height-l) (--font-family-main);
 
   // Element sizes
-  --navbar-size: 50px;
+  --navbar-height: 50px;
+  --sidebar-width: 240px;
+  --sidebar-width-collapsed: 44px;
 }

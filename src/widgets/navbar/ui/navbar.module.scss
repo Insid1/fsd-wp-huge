@@ -1,9 +1,10 @@
 .navbar {
   background-color: var(--inverted-bg-color);
-  height: (--navbar-size);
+  min-height: var(--navbar-height);
+  max-height: var(--navbar-height);
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 0 12px;
   width: 100%;
 
   &__right {

@@ -1,0 +1,26 @@
+.sidebar {
+  background-color: var(--inverted-bg-color);
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  padding: 12px;
+  position: relative;
+  transition: width 0.2s;
+}
+
+.closeBtn {
+  position: absolute;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  right: 12px;
+  top: 12px;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .closeBtn {
+    transform: rotate(45deg);
+  }
+}
+

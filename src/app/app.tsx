@@ -2,6 +2,7 @@ import {AppRouter} from "./providers/router-provider";
 import "app/styles/index.scss";
 import {Navbar} from "widgets/navbar";
 import {useTheme} from "shared/config";
+import {Sidebar} from "widgets/sidebar";
 
 
 function App() {
@@ -10,7 +11,10 @@ function App() {
   return (
     <div className={`app ${theme}`}>
       <Navbar/>
-      <AppRouter/>
+      <div className="contentPage">
+        <Sidebar/>
+        <AppRouter/>
+      </div>
     </div>
   )
 }
