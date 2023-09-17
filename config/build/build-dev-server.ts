@@ -17,7 +17,8 @@ const buildDevServer = ({staticPath, port}: IBuildDevServerParams): DevServerCon
     historyApiFallback: true,
     client: {
       progress: true,
-    }
+    },
+    hot: true,
   }
 }
 

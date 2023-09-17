@@ -20,7 +20,8 @@ const buildPlugins = ({htmlTemplatePath, isDevelopmentMode}: IBuildPluginsParams
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: isDevelopmentMode,
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
 
