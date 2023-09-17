@@ -2,8 +2,9 @@ import {FC, HTMLAttributes} from "react";
 import {classNames} from "shared/lib";
 import cls from './navbar.module.scss'
 import {ERoutes} from "shared/config/route-config";
-import {Link, ThemeSwitcher} from "shared/ui";
+import {Link} from "shared/ui";
 import {useTranslation} from "react-i18next";
+import {ThemeSwitcher} from "widgets/theme-switcher";
 
 interface INavbarProps extends Pick<HTMLAttributes<HTMLDivElement>, 'className'> {
 }
