@@ -18,7 +18,10 @@ const buildWebpackConfig = (options: IBuildOptions): webpack.Configuration => {
       rules: buildLoaders(options),
     },
     resolve: buildResolvers(options),
-    plugins: buildPlugins({htmlTemplatePath: html}),
+    plugins: buildPlugins({
+      htmlTemplatePath: html,
+      isDevelopmentMode
+    }),
     output: {
       filename: "[name].[contenthash].js",
       path: build,

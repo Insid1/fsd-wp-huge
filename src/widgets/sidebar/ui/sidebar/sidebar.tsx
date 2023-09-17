@@ -1,7 +1,7 @@
 import {FC, useState} from "react";
 import {classNames} from "shared/lib";
 import cls from './sidebar.module.scss'
-import {Button} from "shared/ui";
+import {Button, LanguageSwitcher} from "shared/ui";
 import {CrossIcon} from "shared/assets";
 
 interface ISidebarProps {
@@ -28,6 +28,7 @@ const Sidebar: FC<ISidebarProps> = ({children}) => {
       >
         <CrossIcon width={20} height={20}/>
       </Button>
+      <LanguageSwitcher/>
     </div>
   );
 };
