@@ -1,16 +1,15 @@
-import {FC, HTMLAttributes} from "react";
-import {classNames} from "shared/lib";
+import { type FC, type HTMLAttributes } from 'react'
+import { classNames } from 'shared/lib'
+import { ERoutes } from 'shared/config/route-config'
+import { Link } from 'shared/ui'
+import { useTranslation } from 'react-i18next'
+import { ThemeSwitcher } from 'widgets/theme-switcher'
 import cls from './navbar.module.scss'
-import {ERoutes} from "shared/config/route-config";
-import {Link} from "shared/ui";
-import {useTranslation} from "react-i18next";
-import {ThemeSwitcher} from "widgets/theme-switcher";
 
-interface INavbarProps extends Pick<HTMLAttributes<HTMLDivElement>, 'className'> {
-}
+interface INavbarProps extends Pick<HTMLAttributes<HTMLDivElement>, 'className'> {}
 
-const Navbar: FC<INavbarProps> = ({className}) => {
-  const {t} = useTranslation()
+const Navbar: FC<INavbarProps> = ({ className }) => {
+  const { t } = useTranslation()
 
   return (
     <nav className={classNames(cls.navbar, {}, [className])}>
@@ -24,7 +23,7 @@ const Navbar: FC<INavbarProps> = ({className}) => {
       </div>
     </nav>
 
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

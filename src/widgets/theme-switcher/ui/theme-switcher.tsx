@@ -1,15 +1,15 @@
-import {FC, HTMLAttributes, SVGProps} from "react";
-import {classNames} from "shared/lib";
+import { type FC, type HTMLAttributes, type SVGProps } from 'react'
+import { classNames } from 'shared/lib'
 import cls from './theme-switcher.module.scss'
-import {useTheme} from "shared/config";
-import {ThemeDarkIcon, ThemeLightIcon} from "shared/assets";
-import Button from "shared/ui/button/button";
+import { useTheme } from 'shared/config'
+import { ThemeDarkIcon, ThemeLightIcon } from 'shared/assets'
+import Button from 'shared/ui/button/button'
 
 interface IThemeSwitcherProps extends Pick<HTMLAttributes<HTMLButtonElement>, 'className'> {
 }
 
-const ThemeSwitcher: FC<IThemeSwitcherProps> = ({className}) => {
-  const {toggleTheme, theme} = useTheme()
+const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className }) => {
+  const { toggleTheme, theme } = useTheme()
 
   const svgProps: SVGProps<SVGSVGElement> = {
     width: 30,
@@ -28,10 +28,10 @@ const ThemeSwitcher: FC<IThemeSwitcherProps> = ({className}) => {
     >
       {theme === 'light'
         ? <ThemeLightIcon {...svgProps} />
-        : <ThemeDarkIcon  {...svgProps} />
+        : <ThemeDarkIcon {...svgProps} />
       }
     </Button>
-  );
-};
+  )
+}
 
-export default ThemeSwitcher;
+export default ThemeSwitcher

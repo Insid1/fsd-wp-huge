@@ -1,7 +1,7 @@
-function AboutPage() {
-  return (
-    <div>about</div>
-  );
-}
+import { type FC } from 'react'
 
-export default AboutPage;
+const AboutPage: FC = () => (
+  <div>about</div>
+)
+
+export default AboutPage

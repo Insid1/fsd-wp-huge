@@ -1,20 +1,21 @@
-import {ThemeContext} from "app/providers/theme-prodiver/lib/theme-context";
-import React, {useCallback, useContext} from "react";
-import {IThemeContext, ThemeType} from "./intefaces";
+import { ThemeContext } from 'app/providers/theme-prodiver/lib/theme-context'
+import type React from 'react'
+import { useCallback, useContext } from 'react'
+import { type IThemeContext, type ThemeType } from './intefaces'
 
 interface IUseTheme {
-  theme: IThemeContext['theme'];
-  setTheme: IThemeContext['setTheme'];
-  toggleTheme: () => void;
+  theme: IThemeContext['theme']
+  setTheme: IThemeContext['setTheme']
+  toggleTheme: () => void
 }
 
-const LOCAL_STORAGE_THEME_KEY = 'theme';
+const LOCAL_STORAGE_THEME_KEY = 'theme'
 
 export const useTheme = (): IUseTheme => {
-  const {theme, setTheme} = useContext(ThemeContext)
+  const { theme, setTheme } = useContext(ThemeContext)
 
   if (!theme) {
-    throw new Error("hook called outside of theme context")
+    throw new Error('hook called outside of theme context')
   }
 
   const handleSetTheme: React.Dispatch<React.SetStateAction<ThemeType>> = useCallback((themeAction) => {
@@ -24,16 +25,15 @@ export const useTheme = (): IUseTheme => {
       localStorage.setItem(LOCAL_STORAGE_THEME_KEY, currentTheme)
     }
 
-    if (typeof themeAction === "string") {
+    if (typeof themeAction === 'string') {
       setTheme(themeAction)
       localStorage.setItem(LOCAL_STORAGE_THEME_KEY, themeAction)
     }
   }, [setTheme])
 
   const toggleTheme = useCallback(() => {
-    setTheme((prevState) => prevState === "light" ? "dark" : "light")
+    setTheme((prevState) => prevState === 'light' ? 'dark' : 'light')
   }, [setTheme])
 
-
-  return {theme, setTheme: handleSetTheme, toggleTheme}
+  return { theme, setTheme: handleSetTheme, toggleTheme }
 }

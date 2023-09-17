@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "eslint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "start:dev": "webpack serve --env port=9010 mode=development",
     "start:prod": "webpack serve --env port=9010 mode=production",
     "build:dev": "webpack build --env mode=development",

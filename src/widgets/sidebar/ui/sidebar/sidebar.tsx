@@ -1,17 +1,14 @@
-import {FC, useState} from "react";
-import {classNames} from "shared/lib";
+import { type FC, useState } from 'react'
+import { classNames } from 'shared/lib'
 import cls from './sidebar.module.scss'
-import {Button} from "shared/ui";
-import {CrossIcon} from "shared/assets";
-import {LanguageSwitcher} from "widgets/language-switcher";
+import { Button } from 'shared/ui'
+import { CrossIcon } from 'shared/assets'
+import { LanguageSwitcher } from 'widgets/language-switcher'
 
-interface ISidebarProps {
-}
+const Sidebar: FC = ({ children }) => {
+  const [isCollapsed, setIsCollapsed] = useState(false)
 
-const Sidebar: FC<ISidebarProps> = ({children}) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const handleToggleCollapse = () => {
+  const handleToggleCollapse = (): void => {
     setIsCollapsed((prevState) => !prevState)
   }
 
@@ -19,7 +16,7 @@ const Sidebar: FC<ISidebarProps> = ({children}) => {
     <div className={classNames(
       cls.sidebar,
       {
-        [cls.collapsed]: isCollapsed,
+        [cls.collapsed]: isCollapsed
       }
     )}>
       <Button
@@ -31,7 +28,7 @@ const Sidebar: FC<ISidebarProps> = ({children}) => {
       </Button>
       <LanguageSwitcher className={cls.languageSwitcher} />
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

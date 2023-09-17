@@ -1,10 +1,10 @@
-import {RouteProps} from "react-router-dom";
-import {MainPageAsync} from "pages/main-page";
-import {AboutPageAsync} from "pages/about-page";
+import { type RouteProps } from 'react-router-dom'
+import { MainPageAsync } from 'pages/main-page'
+import { AboutPageAsync } from 'pages/about-page'
 
 export enum ERoutes {
-  MAIN= 'main',
-  ABOUT= 'about',
+  MAIN = 'main',
+  ABOUT = 'about',
 }
 
 export const RoutePathMap: Record<ERoutes, string> = {
@@ -15,10 +15,10 @@ export const RoutePathMap: Record<ERoutes, string> = {
 export const routeConfig: RouteProps[] = [
   {
     element: <MainPageAsync/>,
-    path: RoutePathMap.main,
+    path: RoutePathMap.main
   },
   {
     element: <AboutPageAsync/>,
-    path: RoutePathMap.about,
-  },
+    path: RoutePathMap.about
+  }
 ]

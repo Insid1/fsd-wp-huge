@@ -1,14 +1,13 @@
-import {AppRouter} from "./providers/router-provider";
-import "app/styles/index.scss";
-import {Navbar} from "widgets/navbar";
-import {useTheme} from "shared/config";
-import {Sidebar} from "widgets/sidebar";
+import { type FC, Suspense } from 'react'
+import { AppRouter } from './providers/router-provider'
+import { Navbar } from 'widgets/navbar'
+import { useTheme } from 'shared/config'
+import { Sidebar } from 'widgets/sidebar'
+import 'app/styles/index.scss'
 import 'shared/config/i18n'
-import {Suspense} from "react";
 
-
-function App() {
-  const {theme} = useTheme()
+const App: FC = () => {
+  const { theme } = useTheme()
 
   return (
     <div className={`app ${theme}`}>
@@ -24,4 +23,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

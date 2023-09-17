@@ -1,9 +1,9 @@
-function MainPage() {
-  return (
-    <>
-    <div>main</div>
-    </>
-  );
-}
+import { type FC } from 'react'
 
-export default MainPage;
+const MainPage: FC = () => (
+  <>
+    <div>main</div>
+  </>
+)
+
+export default MainPage

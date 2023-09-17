@@ -1,12 +1,12 @@
-import {Dispatch, SetStateAction} from "react";
+import { type Dispatch, type SetStateAction } from 'react'
 
-export type ThemeType = "light" | "dark";
+export type ThemeType = 'light' | 'dark'
 
-export type ColorType = "primary" | "secondary";
+export type ColorType = 'primary' | 'secondary'
 
-export type UIElementType = "primary" | "secondary";
+export type UIElementType = 'primary' | 'secondary'
 
 export interface IThemeContext {
-  theme?: ThemeType;
-  setTheme?: Dispatch<SetStateAction<ThemeType>>;
+  theme?: ThemeType
+  setTheme?: Dispatch<SetStateAction<ThemeType>>
 }

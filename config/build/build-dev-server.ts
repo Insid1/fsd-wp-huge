@@ -1,11 +1,11 @@
-import type {Configuration as DevServerConfiguration} from "webpack-dev-server";
+import type { Configuration as DevServerConfiguration } from 'webpack-dev-server'
 
 interface IBuildDevServerParams {
-  staticPath: string,
-  port: number,
+  staticPath: string
+  port: number
 }
 
-const buildDevServer = ({staticPath, port}: IBuildDevServerParams): DevServerConfiguration => {
+const buildDevServer = ({ staticPath, port }: IBuildDevServerParams): DevServerConfiguration => {
   return {
     static: {
       directory: staticPath
@@ -13,13 +13,13 @@ const buildDevServer = ({staticPath, port}: IBuildDevServerParams): DevServerCon
     compress: true,
     port,
     open: true,
-    allowedHosts: "auto",
+    allowedHosts: 'auto',
     historyApiFallback: true,
     client: {
-      progress: true,
+      progress: true
     },
-    hot: true,
+    hot: true
   }
 }
 
-export {buildDevServer}
+export { buildDevServer }
