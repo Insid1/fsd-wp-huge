@@ -12,7 +12,7 @@ const Navbar: FC<INavbarProps> = ({ className }) => {
   const { t } = useTranslation()
 
   return (
-    <nav className={classNames(cls.navbar, {}, [className])}>
+    <nav className={classNames(cls.navbar, {}, [className as string])}>
       <div className={cls.links}>
         <Link to={ERoutes.MAIN}>{t('Main')}</Link>
         <Link to={ERoutes.ABOUT}>{t('About')}</Link>

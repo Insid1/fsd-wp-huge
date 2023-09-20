@@ -22,7 +22,7 @@ const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className }) => {
       className={classNames(
         cls.themeSwitcher,
         {},
-        [className])
+        [className as string])
       }
       onClick={toggleTheme}
     >

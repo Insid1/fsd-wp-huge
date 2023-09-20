@@ -7,6 +7,6 @@ export type ColorType = 'primary' | 'secondary'
 export type UIElementType = 'primary' | 'secondary'
 
 export interface IThemeContext {
-  theme?: ThemeType
-  setTheme?: Dispatch<SetStateAction<ThemeType>>
+  theme: ThemeType
+  setTheme: Dispatch<SetStateAction<ThemeType>>
 }
