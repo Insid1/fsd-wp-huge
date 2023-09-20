@@ -9,20 +9,25 @@ interface IUseTheme {
   toggleTheme: () => void
 }
 
-export const LOCAL_STORAGE_THEME_KEY = 'theme'
+const LOCAL_STORAGE_THEME_KEY = 'theme'
 
 export const useTheme = (): IUseTheme => {
-  const { theme, setTheme } = useContext(ThemeContext)
+  const ctx = useContext(ThemeContext)
 
-  if (!theme) {
+  if (!ctx) {
     throw new Error('hook called outside of theme context')
   }
 
+  const { theme, setTheme } = ctx
+
   const handleSetTheme: React.Dispatch<React.SetStateAction<ThemeType>> = useCallback((themeAction) => {
     if (typeof themeAction === 'function') {
-      const currentTheme = themeAction(theme)
-      setTheme(currentTheme)
-      localStorage.setItem(LOCAL_STORAGE_THEME_KEY, currentTheme)
+      setTheme((prevTheme): ThemeType => {
+        const currentTheme = themeAction(prevTheme)
+
+        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, currentTheme)
+        return currentTheme
+      })
     }
 
     if (typeof themeAction === 'string') {
@@ -32,7 +37,7 @@ export const useTheme = (): IUseTheme => {
   }, [setTheme])
 
   const toggleTheme = useCallback(() => {
-    setTheme((prevState) => prevState === 'light' ? 'dark' : 'light')
+    handleSetTheme((prevState) => prevState === 'light' ? 'dark' : 'light')
   }, [setTheme])
 
   return { theme, setTheme: handleSetTheme, toggleTheme }
