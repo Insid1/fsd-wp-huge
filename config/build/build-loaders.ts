@@ -45,7 +45,7 @@ const buildLoaders = (options: IBuildOptions): webpack.RuleSetRule[] => {
         loader: 'css-loader',
         options: {
           modules: {
-            auto: (resPath: string) => resPath.includes('.module.scss'),
+            auto: (resPath: string) => resPath.includes('loader.module.scss'),
             localIdentName: isDevelopmentMode
               ? '[path][name]__[local]'
               : '[hash:base64:8]'
