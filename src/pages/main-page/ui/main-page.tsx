@@ -8,9 +8,11 @@ class Handler {
     return this.count
   }
 
-  public handleClick (): void {
-    console.log(this.countt)
-    this.count++
+  public handleClick () {
+    return () => {
+      console.log(this.countt)
+      this.count++
+    }
   }
 }
 
@@ -19,7 +21,7 @@ const MainPage: FC = () => {
 
   return (
     <>
-      <Button onClick={handler.handleClick}>main</Button>
+      <Button onClick={handler.handleClick()}>main</Button>
     </>
   )
 }
