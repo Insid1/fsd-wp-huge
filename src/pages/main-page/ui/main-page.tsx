@@ -3,7 +3,7 @@ import { Button } from 'shared/ui'
 
 const MainPage: FC = () => {
   return (
-      <Button >main</Button>
+    <Button>main</Button>
   )
 }
 

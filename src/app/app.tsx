@@ -11,7 +11,7 @@ const App: FC = () => {
 
   return (
     <div className={`app ${theme}`}>
-      {/* i18n translations might still be loaded by the http backend. */}
+      {/* i18n translations might still be loaded by the http backend. That's why we have suspense */}
       <Suspense fallback="">
         <Navbar/>
         <div className="contentPage">
