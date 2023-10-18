@@ -8,7 +8,7 @@ interface IBuildDevServerParams {
 const buildDevServer = ({ staticPath, port }: IBuildDevServerParams): DevServerConfiguration => {
   return {
     static: {
-      directory: staticPath
+      directory: staticPath,
     },
     compress: true,
     port,
@@ -16,9 +16,9 @@ const buildDevServer = ({ staticPath, port }: IBuildDevServerParams): DevServerC
     allowedHosts: 'auto',
     historyApiFallback: true,
     client: {
-      progress: true
+      progress: true,
     },
-    hot: true
+    hot: true,
   }
 }
 

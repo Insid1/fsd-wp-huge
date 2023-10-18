@@ -11,18 +11,18 @@ interface IBuildPluginsParams {
 const buildPlugins = ({ htmlTemplatePath, isDevelopmentMode }: IBuildPluginsParams): webpack.WebpackPluginInstance[] => {
   return [
     new HtmlWebpackPlugin({
-      template: htmlTemplatePath
+      template: htmlTemplatePath,
     }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css'
+      chunkFilename: 'css/[name].[contenthash:8].css',
     }),
     new webpack.DefinePlugin({
-      __IS_DEV__: isDevelopmentMode
+      __IS_DEV__: isDevelopmentMode,
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({ openAnalyzer: false })
+    new BundleAnalyzerPlugin({ openAnalyzer: false }),
   ]
 }
 

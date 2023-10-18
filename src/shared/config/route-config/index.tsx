@@ -12,20 +12,20 @@ export enum ERoutes {
 export const RoutePathMap: Record<ERoutes, string> = {
   [ERoutes.MAIN]: '/',
   [ERoutes.ABOUT]: '/about',
-  [ERoutes.NOT_FOUND]: '*'
+  [ERoutes.NOT_FOUND]: '*',
 }
 
 export const routeConfig: RouteProps[] = [
   {
     element: <MainPageAsync/>,
-    path: RoutePathMap.main
+    path: RoutePathMap.main,
   },
   {
     element: <AboutPageAsync/>,
-    path: RoutePathMap.about
+    path: RoutePathMap.about,
   },
   {
     element: <NotFoundPage/>,
-    path: RoutePathMap.notFound
-  }
+    path: RoutePathMap.notFound,
+  },
 ]

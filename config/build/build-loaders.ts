@@ -9,7 +9,7 @@ const buildLoaders = (options: IBuildOptions): webpack.RuleSetRule[] => {
   const typescriptLoader: webpack.RuleSetRule = {
     test: /\.tsx?$/,
     use: 'ts-loader',
-    exclude: /node_modules/
+    exclude: /node_modules/,
   }
 
   // add extensions to regexp to load different files
@@ -17,9 +17,9 @@ const buildLoaders = (options: IBuildOptions): webpack.RuleSetRule[] => {
     test: /\.(png|jpe?g|gif)$/i,
     use: [
       {
-        loader: 'file-loader'
-      }
-    ]
+        loader: 'file-loader',
+      },
+    ],
   }
 
   const svgLoader: webpack.RuleSetRule = {
@@ -29,10 +29,10 @@ const buildLoaders = (options: IBuildOptions): webpack.RuleSetRule[] => {
       {
         loader: '@svgr/webpack',
         options: {
-          icon: true
-        }
-      }
-    ]
+          icon: true,
+        },
+      },
+    ],
   }
 
   const cssLoader: webpack.RuleSetRule = {
@@ -48,19 +48,19 @@ const buildLoaders = (options: IBuildOptions): webpack.RuleSetRule[] => {
             auto: (resPath: string) => resPath.includes('.module.scss'),
             localIdentName: isDevelopmentMode
               ? '[path][name]__[local]'
-              : '[hash:base64:8]'
-          }
-        }
+              : '[hash:base64:8]',
+          },
+        },
       },
-      'sass-loader'
-    ]
+      'sass-loader',
+    ],
   }
 
   return [
     typescriptLoader,
     cssLoader,
     svgLoader,
-    fileLoader
+    fileLoader,
   ]
 }
 

@@ -22,7 +22,7 @@ const Link: FC<ILinkProps> = (
       className={classNames(
         cls.appLink,
         {},
-        [cls[color]]
+        [cls[color]],
       )}
       {...rest}
     />

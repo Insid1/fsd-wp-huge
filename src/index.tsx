@@ -15,5 +15,5 @@ render((
     </ThemeProvider>
 
 ),
-document.getElementById('root')
+document.getElementById('root'),
 )

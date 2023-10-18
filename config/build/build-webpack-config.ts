@@ -15,20 +15,20 @@ const buildWebpackConfig = (options: IBuildOptions): webpack.Configuration => {
     entry,
     mode,
     module: {
-      rules: buildLoaders(options)
+      rules: buildLoaders(options),
     },
     resolve: buildResolvers(options),
     plugins: buildPlugins({
       htmlTemplatePath: html,
-      isDevelopmentMode
+      isDevelopmentMode,
     }),
     output: {
       filename: '[name].[contenthash].js',
       path: build,
-      clean: true
+      clean: true,
     },
     devtool: isDevelopmentMode ? 'inline-source-map' : undefined,
-    devServer: isDevelopmentMode ? buildDevServer({ staticPath, port }) : undefined
+    devServer: isDevelopmentMode ? buildDevServer({ staticPath, port }) : undefined,
   }
 }
 

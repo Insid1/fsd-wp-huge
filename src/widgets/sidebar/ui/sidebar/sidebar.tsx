@@ -16,8 +16,8 @@ const Sidebar: FC = ({ children }) => {
     <div className={classNames(
       cls.sidebar,
       {
-        [cls.collapsed]: isCollapsed
-      }
+        [cls.collapsed]: isCollapsed,
+      },
     )}>
       <Button
         className={cls.closeBtn}

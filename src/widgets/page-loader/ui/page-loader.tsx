@@ -9,7 +9,7 @@ const PageLoader: FC = () => {
       <div className={cls.loader}>
         <Loader/>
       </div>
-    </div>, document.body
+    </div>, document.body,
   )
 }
 

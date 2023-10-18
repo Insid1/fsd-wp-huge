@@ -13,7 +13,7 @@ const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className }) => {
 
   const svgProps: SVGProps<SVGSVGElement> = {
     width: 30,
-    height: 30
+    height: 30,
   }
 
   return (

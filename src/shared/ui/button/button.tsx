@@ -20,8 +20,8 @@ const Button: FC<IButtonProps> = (
         cls.btn,
         {
           [cls[`${color}Color`]]: color,
-          [cls[`${themeType}Type`]]: themeType
-        }
+          [cls[`${themeType}Type`]]: themeType,
+        },
       )}
       {...rest}
     />
