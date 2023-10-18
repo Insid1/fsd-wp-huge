@@ -33,6 +33,7 @@ module.exports = {
     "@typescript-eslint/strict-boolean-expressions": "off",
     "react/no-deprecated": ["warn"],
     "no-underscore-dangle": "off",
+    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
     "@typescript-eslint/no-empty-interface": [
       "warn",
       {

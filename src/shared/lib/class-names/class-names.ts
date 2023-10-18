@@ -13,7 +13,7 @@ const classNames: ClassNames = (cls, mods = {}, additions = []) => {
   return [
     cls,
     ...modsClasses,
-    ...additions.filter(Boolean)
+    ...additions.filter(Boolean),
   ].join(' ')
 }
 
