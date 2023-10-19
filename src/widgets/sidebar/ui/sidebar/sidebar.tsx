@@ -1,11 +1,11 @@
-import { type FC, useState } from 'react'
+import { type FC, type PropsWithChildren, useState } from 'react'
 import { classNames } from 'shared/lib'
 import cls from './sidebar.module.scss'
 import { Button } from 'shared/ui'
 import { CrossIcon } from 'shared/assets'
 import { LanguageSwitcher } from 'widgets/language-switcher'
 
-const Sidebar: FC = ({ children }) => {
+const Sidebar: FC<PropsWithChildren> = () => {
   const [isCollapsed, setIsCollapsed] = useState(false)
 
   const handleToggleCollapse = (): void => {

@@ -5,7 +5,7 @@ import { PageLoader } from 'widgets/page-loader'
 
 const AppRouter: FC = () => {
   return (
-    <Suspense fallback={PageLoader}>
+    <Suspense fallback={<PageLoader/>}>
       <Routes>
         {routeConfig.map(({ element, ...routeProps }) => (
           <Route key={routeProps.path} element={(
