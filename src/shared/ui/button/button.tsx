@@ -16,6 +16,7 @@ const Button: FC<IButtonProps> = (
   }) => {
   return (
     <button
+      data-testid="button"
       className={classNames(
         cls.btn,
         {

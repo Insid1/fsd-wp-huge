@@ -13,14 +13,17 @@ const Sidebar: FC<PropsWithChildren> = () => {
   }
 
   return (
-    <div className={classNames(
-      cls.sidebar,
-      {
-        [cls.collapsed]: isCollapsed,
-      },
-    )}>
+    <div
+      data-testid="sidebar"
+      className={classNames(
+        cls.sidebar,
+        {
+          [cls.collapsed]: isCollapsed,
+        },
+      )}>
       <Button
         className={cls.closeBtn}
+        data-testid="sidebar-toggle-button"
         themeType="clear"
         onClick={handleToggleCollapse}
       >
