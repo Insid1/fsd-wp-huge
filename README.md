@@ -1,13 +1,13 @@
 # Basic React project with **Best practices**
 
-## Архитектура проекта
-### В проекте используется архитектура [FSD](https://feature-sliced.design/docs/get-started/overview)
+## Project Architecture
+### The project follows the [FSD](https://feature-sliced.design/docs/get-started/overview) architecture.
 
-* В Основе подхода лежат **Бизнесс фичи** (Пользователь, задача, посты) и **Бизнесс сущности** (Регистрация, Покупка, Добавление в корзину, удаление пользователя)
-* Каждый вышележащий слой может использовать только нижележащие слои (Dependensy inversion)
-* Каждый слайс должен обладать публичным АПИ (экспорт наружу через index как правило компонент и типы)
+* The approach is based on **Business Features** (User, Task, Posts) and **Business Entities** (Registration, Purchase, Add to Cart, Delete User).
+* Each higher layer can only use the lower layers (Dependency Inversion).
+* Each slice should have a public API (exported through an index file, usually containing components and types).
 
-### Слои используемые в проекте
+### Layers used in the project
 1. [APP](https://feature-sliced.design/ru/docs/reference/layers#app)
 
 2. [Pages](https://feature-sliced.design/ru/docs/reference/layers#pages)
@@ -24,41 +24,42 @@
 ### Типовая архитектура проекта
 
 ```
-├── App                 #   Layer - Приложение        
+
+├── App                 #   Layer - Application        
 │                       #
-├── Pages               #   Layer - Страницы        
-│   ├── {SOME WIDGET}   #       Slice - Имя страницы (Main, About, Post)
-│   │    ├── model      #           Segment - Бизнесс логика к странице
-│   │    ├── lib        #           Segment - Инфраструктурная логика в уровне страницы (helpers/utils)
-│   │    └── ui         #           Segment - UI компоненты привязанные к странице
+├── Pages               #   Layer - Pages        
+│   ├── {SOME WIDGET}   #       Slice - Page name (Main, About, Post)
+│   │    ├── model      #           Segment - Business logic for the page
+│   │    ├── lib        #           Segment - Infrastructure logic at the page level (helpers/utils)
+│   │    └── ui         #           Segment - UI components related to the page
 │   (...)               #           
 │                       #           
-├── Widgets             #   Layer - Виджеты      
-│   ├── {SOME WIDGET}   #       Slice - Имя виджета (Header, Navbar, Sidebar, Footer) 
-│   │    ├── model      #           Segment - Бизнесс логика к виджету
-│   │    ├── lib        #           Segment - Инфраструктурная логика в уровне виджета (helpers/utils)
-│   │    └── ui         #           Segment - UI компоненты привязанные к виджету
+├── Widgets             #   Layer - Widgets      
+│   ├── {SOME WIDGET}   #       Slice - Widget name (Header, Navbar, Sidebar, Footer) 
+│   │    ├── model      #           Segment - Business logic for the widget
+│   │    ├── lib        #           Segment - Infrastructure logic at the widget level (helpers/utils)
+│   │    └── ui         #           Segment - UI components related to the widget
 │   (...)               #           
 │                       #
-├── Features            #   Layer - Фичи
-│   ├── {SOME FEATURE}  #       Slice - Имя фичи (AuthByPhone, RemoveTask, AddPost)
-│   │    ├── model      #           Segment - Бизнесс логика к фиче
-│   │    ├── lib        #           Segment - Инфраструктурная логика в уровне фичи (helpers/utils)
-│   │    └── ui         #           Segment - UI компоненты привязанные к фиче
+├── Features            #   Layer - Features
+│   ├── {SOME FEATURE}  #       Slice - Feature name (AuthByPhone, RemoveTask, AddPost)
+│   │    ├── model      #           Segment - Business logic for the feature
+│   │    ├── lib        #           Segment - Infrastructure logic at the feature level (helpers/utils)
+│   │    └── ui         #           Segment - UI components related to the feature
 │   (...)               #           
 │                       #
-├── Entities            #   Layer - Бизнесс сущности
-│   ├── {SOME ENTITY}   #       Slice - Наименование сущности (User, Task, Post)
-│   │    ├── model      #           Segment - Бизнесс логика к бизнесс сущности
-│   │    ├── lib        #           Segment - Инфраструктурная логика (helpers/utils)
-│   │    └── ui         #           Segment - UI компоненты привязанные к бизнесс сущности
+├── Entities            #   Layer - Business Entities
+│   ├── {SOME ENTITY}   #       Slice - Entity name (User, Task, Post)
+│   │    ├── model      #           Segment - Business logic for the business entity
+│   │    ├── lib        #           Segment - Infrastructure logic (helpers/utils)
+│   │    └── ui         #           Segment - UI components related to the business entity
 │   (...)               #           
 │                       #
-├── Shared              #   Layer - Переиспользуемые ресурсы
-│   ├── api             #           Segment - Логика запросов к АПИ
-│   ├── assets          #           Segment - Вспомогательные элементы (шрифты, иконки, картинки и т.п.)
-│   ├── config          #           Segment - Конфигурация приложения
-│   ├── lib             #           Segment - Инфраструктурная логика приложения
-│   └── ui              #           Segment - UI kit приложения
-```
+├── Shared              #   Layer - Reusable resources
+│   ├── api             #           Segment - API request logic
+│   ├── assets          #           Segment - Auxiliary elements (fonts, icons, images, etc.)
+│   ├── config          #           Segment - Application configuration
+│   ├── lib             #           Segment - Application infrastructure logic
+│   └── ui              #           Segment - Application UI kit
 
+```
