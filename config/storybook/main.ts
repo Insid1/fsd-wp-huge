@@ -1,20 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-webpack5'
-import { type StorybookConfigWebpack } from '@storybook/builder-webpack5'
-import path from 'path'
-import { buildCSSLoader } from '../build/loaders/buildCSSLoader'
-
-const storybookWebpackConfig: StorybookConfigWebpack['webpackFinal'] = async (config, { configType }) => {
-  config?.module?.rules?.push(buildCSSLoader(true))
-
-  if (config?.resolve?.modules) {
-    config.resolve.modules = [
-      ...(config.resolve.modules ?? []),
-      path.resolve(__dirname, '../../src'),
-    ]
-  }
-
-  return config
-}
+import { storybookWebpackConfig } from './storybook-webpack-config'
 
 const config: StorybookConfig = {
   // Required
@@ -29,7 +14,7 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   webpackFinal: storybookWebpackConfig,
-  staticDirs: ['../../public'],
+  staticDirs: ['../../public', '../../src/shared/assets'],
 }
 
 export default config

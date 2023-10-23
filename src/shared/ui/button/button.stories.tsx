@@ -18,15 +18,13 @@ export const Primary: Story = {
     children: 'Click me',
     themeType: 'primary',
   },
-  // ...
 }
 export const Secondary: Story = {
   args: {
     color: 'secondary',
     children: 'Click me',
-    themeType: 'secondary',
+    themeType: 'clear',
   },
-  // ...
 }
 
 export default meta
