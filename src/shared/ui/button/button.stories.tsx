@@ -5,7 +5,7 @@ import Button from './button'
 type TButton = typeof Button
 
 const meta: Meta<TButton> = {
-  title: 'Button',
+  title: 'shared/Button',
   component: Button,
   // ...
 }

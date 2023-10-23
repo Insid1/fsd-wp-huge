@@ -5,15 +5,14 @@ import Sidebar from './sidebar'
 type TSidebar = typeof Sidebar
 
 const meta: Meta<TSidebar> = {
-  title: 'Sidebar',
+  title: 'widgets/Sidebar',
   component: Sidebar,
 }
 
 type Story = StoryObj<TSidebar>
 
-export const Primary: Story = {
-  args: {
-  },
+export const Default: Story = {
+  args: {},
 }
 
 export default meta

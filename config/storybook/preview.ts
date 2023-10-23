@@ -1,10 +1,11 @@
 import { type Preview } from '@storybook/react'
 import { withStyleDecorator } from './decorators/style-decorator'
-import { themeDecorator } from './decorators/theme-decorator'
+import { withThemeDecorator } from './decorators/theme-decorator'
+import { withRouterDecorator } from './decorators/router-decorator'
 
 const preview: Preview = {
   parameters: {},
-  decorators: [withStyleDecorator, themeDecorator('light')],
+  decorators: [withRouterDecorator, withStyleDecorator, withThemeDecorator('light')],
 }
 
 export default preview
