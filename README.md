@@ -7,6 +7,7 @@
 * Each higher layer can only use the lower layers (Dependency Inversion).
 * Each slice should have a public API (exported through an index file, usually containing components and types).
 
+
 ### Layers used in the project
 1. [APP](https://feature-sliced.design/ru/docs/reference/layers#app)
 
